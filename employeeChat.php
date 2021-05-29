@@ -14,22 +14,22 @@
 <link rel="stylesheet" href="style.css"></head>
 <body>
 
-<?php
-	error_reporting(E_ALL ^ E_NOTICE);
-	echo "Hi ". ucwords($_SESSION["getLogin"]);
-?>
+<ul>
+	<?php
+		error_reporting(E_ALL ^ E_NOTICE);
+		echo "<li style='padding: 14px 16px; float:left'>Hi ". ucwords($_SESSION["getLogin"])."</li>";
+	?>
+	<li><a href= "logout.php">Logout </a></li>
+	<li><a href= "modify.php">View Account </a></li>
+</ul>
 
-&nbsp; &nbsp;<a href= "client.php">Chat </a>
-
-&nbsp; &nbsp;<a href= "modify.php">View Account </a>
-
-&nbsp; &nbsp;<a href= "logout.php">Logout </a>
-
-
-<h3>Chat Option</h3>
+<div class = "logincentered">
+<h1><center>Chat Option</center></h1>
 <form method="POST">
-Enter Message: <input type="text" name="txtMessage" size="20">
-<input type="submit" name="btnSend" value="send"><br/><br/>
+<center>
+<table>
+<tr><td style='color:white'>Enter Message: <input type="text" name="txtMessage" size="20"></td><td><input type="submit" name="btnSend" value="send" class="button" style='margin-bottom:15px'></td></tr>
+</table>
 
 <?php
   $host = "127.0.0.1";
@@ -49,7 +49,9 @@ Enter Message: <input type="text" name="txtMessage" size="20">
   }
 ?>
 
-  <textarea rows="10" cols="45"><?php echo @$reply; ?></textarea>
+  <textarea rows="10" cols="49"><?php echo @$reply; ?></textarea>
 </form>
 
 <?php } ?>
+</center>
+</div>
