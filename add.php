@@ -1,4 +1,7 @@
 <link rel="stylesheet" href="style.css">
+<ul>
+  <li style='float:left'><a href= "login.php">Back</a></li>
+</ul>
 <div class = "logincentered">
 
 <form action ="add.php" method = "post">
@@ -10,18 +13,18 @@
 	Enter Username: <input type="text" name= "euser" size="8" /> <br />
 	Enter Password: <input type="password" name= "epass" size="50" /> <br />
 	</p>
-	
+
 	<center><input type ="submit" name ="Save" class="button"/><center> <br />
 </form>
 
-<?php 
+<?php
 	error_reporting(E_ALL ^ E_NOTICE);
-	
+
 	$DBConnect = mysqli_connect("localhost", "root", "")
-	or die("Unable to connect". mysqli_error());	
-	
+	or die("Unable to connect". mysqli_error());
+
 	mysqli_select_db($DBConnect, "dbemployee");
-	
+
 	if(isset($_POST["Save"]))
 	{
 		$eid=$_POST["eid"];
@@ -30,17 +33,17 @@
 		$egender=$_POST["egender"];
 		$euser=$_POST["euser"];
 		$epass=$_POST["epass"];
-		
-		$sql = "INSERT INTO tblemployee (empid, empname, empstatus, empgender, empuser, emppass) 
+
+		$sql = "INSERT INTO tblemployee (empid, empname, empstatus, empgender, empuser, emppass)
 		VALUES ('$eid', '$ename', '$estatus', '$egender', '$euser', '$epass')";
 		mysqli_query($DBConnect, $sql) or die(mysqli_error());
 		echo "Records have been saved";
 	}
-	
+
 	else
 	{
 		echo "<center>Cannot Save</center>";
 	}
-	
-?>	
+
+?>
 </div>
