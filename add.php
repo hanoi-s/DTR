@@ -12,7 +12,7 @@
 	<p style="color:white">
 	Enter ID: <input type="text" name= "eid" size="10" /> <br />
 	Enter Name: <input type="text" name= "ename" size="50" /> <br />
-	Enter Status: <input type="radio" name= "estatus" value="Probation" />Probation<br />
+	Enter Status: <input type="radio" name= "estatus" value="Probation" />Probation
                 <input type="radio" name= "estatus" value="Regular" />Regular<br />
 	Enter Gender: <input type="radio" name="egender" value="M">Male
                 <input type="radio" name="egender" value="F">Female<br>
