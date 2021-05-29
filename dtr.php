@@ -10,24 +10,23 @@
 
 <html>
 <head>
-
+<link rel="stylesheet" href="style.css">
 <title>Employee DTR</title>
 </head>
-<body bgcolor='#CCCCCC'>
 
-<?php
-	error_reporting(E_ALL ^ E_NOTICE);
-	echo "Hi ". ucwords($_SESSION["getLogin"]);
-?>
-
-&nbsp; &nbsp;<a href= "employeeChat.php">Chat </a>
-
-&nbsp; &nbsp;<a href= "modify.php">View Account </a>
-
-&nbsp; &nbsp;<a href= "logout.php">Logout </a>
+<ul>
+	<?php
+		error_reporting(E_ALL ^ E_NOTICE);
+		echo "<li style='padding: 14px 16px; float:left'>Hi ". ucwords($_SESSION["getLogin"])."</li>";
+	?>
+	<li><a href= "logout.php">Logout </a></li>
+	<li><a href= "employeeChat.php">Chat </a></li>
+	<li><a href= "modify.php">View Account </a></li>
+</ul>
 
 
 <center>
+<div style='color:white'><br><br>
 <h2>Work Schedule </h2>
 <h3>[ Online Daily Time Record ]</h3>
 <form action="dtrprocess.php" method="post">
@@ -45,15 +44,15 @@ Date of Effectivity: &nbsp;
 	  <?php
 	     $dayArray = array("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
 		 echo "<table width='40%'>";
-		 echo "<tr><th>/</th><th>Day</th><th>Time In</th><th>Time Out</th><tr>";
+		 echo "<tr style='color:white'><th>/</th><th>Day</th><th>Time In</th><th>Time Out</th><tr>";
 		 for($day=0; $day<=5; $day++) {
-		   echo "<tr><td><input type='checkbox' id = 'work$day' name='work$day' value='$dayArray[$day]'></td><td align = 'center'>".$dayArray[$day]. "</td>".
-		        "<td align='center'><select id = 'in$day' name='in$day'><option></option>";
+		   echo "<tr style='color:white'><td><input type='checkbox' id = 'work$day' name='work$day' value='$dayArray[$day]'></td><td align = 'center'>".$dayArray[$day]. "</td>".
+		        "<td align='center'><select id = 'in$day' name='in$day' required disabled><option></option>";
 				      for($timein=0; $timein<=24; $timein++) {
 					     echo "<option value=$timein>$timein</option>";
 					  }
            echo "</select></td>";
-		   echo "<td align='center'><select id = 'out$day' name='out$day'><option></option>";
+		   echo "<td align='center'><select id = 'out$day' name='out$day' required disabled><option></option>";
 		              for($timeout=0; $timeout<=24; $timeout++){
 					    echo "<option value=$timeout>$timeout</option>";
 					  }
@@ -62,12 +61,23 @@ Date of Effectivity: &nbsp;
 		 echo "</table>";
 	  ?>
 	<br />  
-	<input type="submit" name="enter" value="Save">
-	<input formaction = 'dtrview.php' type="submit" name="click" value = "View"> 
-	<input type="reset">
+	<input type="submit" name="enter" value="Save" class="button">
+	<input formaction = 'dtrview.php' type="submit" name="click" value = "View" class="button"> 
+	<input type="reset" class="button">
   </form>
   </center>
-
+  
+  <script>
+	<?php
+	for($day=0; $day<=5; $day++) {
+		echo  "document.getElementById('work$day').onchange = function() {";
+		echo  "document.getElementById('in$day').disabled = !this.checked;";
+		echo  "document.getElementById('out$day').disabled = !this.checked;";
+		echo  "};";
+	}
+	?>
+</script>
+</div>
 </body>
 </html>
 
