@@ -1,23 +1,23 @@
 <?php
 	session_start();
-	if(isset($_SESSION['getLogin'])) 	
+	if(isset($_SESSION['getLogin']))
 	{
 		header("location:dtr.php");
 	}
-	
+
 	else {
 ?>
 
 <html>
 <head>
-	<title>Log-In</title>
+	<title>Log In</title>
 	<link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <ul>
-  <li><a href= "client.php">Chat </a></li>
-  <li><a href= "add.php">Sign up here </a></li>
+  <li><a href= "client.php">CHAT</a></li>
+  <li><a href= "add.php">REGISTER</a></li>
 </ul>
 
 <div class = "logincentered"><center>
@@ -38,12 +38,12 @@
 <?php
 if(isset($_GET["error"])) {
   $error=$_GET["error"];
-  
-  //this line will be called by the check.php if the login credentials are incorrect 
+
+  //this line will be called by the check.php if the login credentials are incorrect
   if ($error==1) {
   echo "<p align='center'>Username and/or password invalid<br/></p>"; }
 }
- 
+
 ?>
 </center>
 <div>
@@ -51,5 +51,3 @@ if(isset($_GET["error"])) {
 </html>
 
 <?php } ?>
-
-
