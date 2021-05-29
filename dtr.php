@@ -4,7 +4,7 @@
 	{
 		header("location:login.php");
 	}
-	
+
 	else {
 ?>
 
@@ -56,17 +56,17 @@ Date of Effectivity: &nbsp;
 		              for($timeout=0; $timeout<=24; $timeout++){
 					    echo "<option value=$timeout>$timeout</option>";
 					  }
-           echo "</select></td></tr>";					  
+           echo "</select></td></tr>";
          }
 		 echo "</table>";
 	  ?>
-	<br />  
+	<br />
 	<input type="submit" name="enter" value="Save" class="button">
-	<input formaction = 'dtrview.php' type="submit" name="click" value = "View" class="button"> 
+	<input formaction = 'dtrview.php' type="submit" name="click" value = "View" class="button">
 	<input type="reset" class="button">
   </form>
   </center>
-  
+
   <script>
 	<?php
 	for($day=0; $day<=5; $day++) {
