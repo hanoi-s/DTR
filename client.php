@@ -9,11 +9,12 @@
 
 
 <div class = "logincentered">
-<h3 style="color:white">Chat with Admin</h3>
+<h1><center>Chat with Admin</center></h1>
 
 <form method="POST">
-<p style="color:white"><input type="text" name="txtMessage" size="45" placeholder="Type your message..."></p>
-<center><input type="submit" name="btnSend" value="send" class="button"></center><br/><br/>
+<table>
+<tr><td><input type="text" name="txtMessage" size="45" placeholder="Type your message..."></td><td><input type="submit" name="btnSend" value="send" class="button" style='margin-bottom:15px'></td></tr>
+</table>
 
 <?php
   $host = "127.0.0.1";
@@ -33,5 +34,5 @@
   }
 ?>
 
-  <textarea rows="10" cols="45" placeholder="Chatbox"><?php echo @$reply; ?></textarea></div>
+  <textarea rows="10" cols="62" placeholder="Chatbox"><?php echo @$reply; ?></textarea></div>
 </form>

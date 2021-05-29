@@ -5,6 +5,7 @@
 <div class = "logincentered">
 
 <form action ="add.php" method = "post">
+	<br><br><h1><center>Register</center></h1>
 	<p style="color:white">
 	Enter ID: <input type="text" name= "eid" size="8" /> <br />
 	Enter Name: <input type="text" name= "ename" size="50" /> <br />
