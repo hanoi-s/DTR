@@ -21,7 +21,7 @@
 	?>
 	<li><a href= "logout.php">Logout </a></li>
 	<li><a href= "employeeChat.php">Chat </a></li>
-	<li><a href= "modify.php">View Account </a></li>
+	<li><a href= "edit.php">View Account </a></li>
 </ul>
 
 
