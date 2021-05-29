@@ -1,4 +1,5 @@
-<link rel="stylesheet" href="style.css">
+<head><title>Register</title>
+<link rel="stylesheet" href="style.css"></head>
 <ul>
   <li style='float:left'><a href= "login.php">Back</a></li>
 </ul>
@@ -7,10 +8,10 @@
 <form action ="add.php" method = "post">
 	<br><br><h1><center>Register</center></h1>
 	<p style="color:white">
-	Enter ID: <input type="text" name= "eid" size="8" /> <br />
+	Enter ID: <input type="text" name= "eid" size="10" /> <br />
 	Enter Name: <input type="text" name= "ename" size="50" /> <br />
 	Enter Status: <input type="text" name= "estatus" size="8" /> <br />
-	Enter Gender: <input type="text" name= "egender" size="50" /> <br />
+	Enter Gender: <input type="text" name= "egender" size="5" /> <br />
 	Enter Username: <input type="text" name= "euser" size="8" /> <br />
 	Enter Password: <input type="password" name= "epass" size="50" /> <br />
 	</p>
