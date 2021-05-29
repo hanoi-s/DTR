@@ -2,6 +2,8 @@
 <link rel="stylesheet" href="style.css"></head>
 <ul>
   <li style='float:left'><a href= "login.php">Back</a></li>
+  <li><a href= "client.php">CHAT</a></li>
+  <li><a href= "login.php">LOGIN</a></li>
 </ul>
 <div class = "logincentered">
 
