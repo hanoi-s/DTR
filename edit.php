@@ -18,12 +18,21 @@
   function confirmation() {
     alert ("Confirm Modification of Record?")
   }
+
+	function confirmDelete(){
+		if (confirm("Confirm Deletion of Record?")) {
+			alert("Account successfully deleted!");
+			self.location = "delete.php";
+		} else {
+			self.location = "edit.php";
+		}
+	}
 </script>
 </head>
 <body>
 <div class = "logincentered">
 <br><br><br><br><br><br>
-<h1>Update Module</h1>
+<h1>Edit Your Profile</h1>
 <br>
 <?php
 	require("connect.php");
@@ -44,15 +53,13 @@
        echo "Name: <input type='text' name='name' value='" .$name."' size='30'><br/>";
        echo "Status: <input type='text' name='status' value='".$status."' size='30'><br/>";
        echo "Gender: <input type='text' name='gender' value='".$gender."' size='1'><br/>";
-	   echo "Username: <input type='text' name='user' value='".$user."' size='30'><br/>";
+	   	 echo "Username: <input type='text' name='user' value='".$user."' size='30'><br/>";
        echo "Password: <input type='text' name='pass' value='".$pass."' size='30'><br/>";
-
+			 echo "<input type='button' onclick='confirmDelete()' name='delete' value='Delete account' class='button'/>";
     echo "<br /><center><input type='submit' onclick='confirmation()' name='edit' value='Save' class='button'/><center>";
    echo "</form>";
   }
  ?>
-
-<!-- <a href='dtr.php'>View All</a> -->
 </div>
 </body>
 </html>
