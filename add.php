@@ -31,7 +31,7 @@
 
 	mysqli_select_db($DBConnect, "dbemployee");
 
-	$query = mysqli_query($DBConnect, "SELECT empuser, emppass, empid FROM tblemployee WHERE empuser = '$user'");
+	// $query = mysqli_query($DBConnect, "SELECT empuser, emppass, empid FROM tblemployee WHERE empuser = '$user'");
 
 
 	if(isset($_POST["Save"]))
