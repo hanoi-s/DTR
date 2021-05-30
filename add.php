@@ -10,15 +10,12 @@
 <form action ="add.php" method = "post">
 	<br><br><h1><center>Register</center></h1>
 	<p style="color:white">
-  Enter ID: <input type='text' name="eid" size='14' autofocus/> <br />
-	Enter Name: <input type="text" name= "ename" size="50" /> <br />
-	Enter Status: <input type="radio" name= "estatus" value="Probation" />Probation
-                <input type="radio" name= "estatus" value="Regular" />Regular<br />
-	Enter Gender: <input type="radio" name="egender" value="M">Male
-                <input type="radio" name="egender" value="F">Female<br>
-	Enter Username: <input type="text" name= "euser" size="8" /> <br />
-	Enter Password: <input type="password" name= "epass" size="50" /> <br />
-	</p>
+    Enter ID: <input type="text" name= "eid" size="20" autofocus/> <br />
+  	Enter Name: <input type="text" name= "ename" size="30" /> <br />
+  	Enter Status: <input type="text" name= "estatus" size="20" /> <br />
+  	Enter Gender: <input type="text" name= "egender" size="1" /> <br />
+  	Enter Username: <input type="text" name= "euser" size="20" /> <br />
+  	Enter Password: <input type="text" name= "epass" size="20" /> <br />
 
 	<center><input type ="submit" name ="Save" class="button" value="Register"/><center> <br />
 </form>
