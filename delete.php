@@ -37,6 +37,7 @@ error_reporting(E_ALL ^ E_NOTICE);
 
 <?php } ?>
 
+<!-- DESTROY SESSION IF ACCOUNT IS DELETED -->
 <?php
 session_start();
 session_destroy();
