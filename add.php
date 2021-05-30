@@ -10,7 +10,7 @@
 <form action ="add.php" method = "post">
 	<br><br><h1><center>Register</center></h1>
 	<p style="color:white">
-  Enter ID: <input type='text' name="eid" size='14' value=''/> <br />
+  Enter ID: <input type='text' name="eid" size='14' autofocus/> <br />
 	Enter Name: <input type="text" name= "ename" size="50" /> <br />
 	Enter Status: <input type="radio" name= "estatus" value="Probation" />Probation
                 <input type="radio" name= "estatus" value="Regular" />Regular<br />
