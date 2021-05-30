@@ -10,7 +10,7 @@
 <form action ="add.php" method = "post">
 	<br><br><h1><center>Register</center></h1>
 	<p style="color:white">
-	Enter ID: <input type="text" name= "eid" size="10" /> <br />
+  Enter ID: <input type='text' name="eid" size='14' value=''/> <br />
 	Enter Name: <input type="text" name= "ename" size="50" /> <br />
 	Enter Status: <input type="radio" name= "estatus" value="Probation" />Probation
                 <input type="radio" name= "estatus" value="Regular" />Regular<br />
@@ -20,7 +20,7 @@
 	Enter Password: <input type="password" name= "epass" size="50" /> <br />
 	</p>
 
-	<center><input type ="submit" name ="Save" class="button"/><center> <br />
+	<center><input type ="submit" name ="Save" class="button" value="Register"/><center> <br />
 </form>
 
 <?php
@@ -31,7 +31,8 @@
 
 	mysqli_select_db($DBConnect, "dbemployee");
 
-	if(isset($_POST["Save"]))	{
+	if(isset($_POST["Save"]))
+	{
 		$eid=$_POST["eid"];
 		$ename=$_POST["ename"];
 		$estatus=$_POST["estatus"];
@@ -43,7 +44,10 @@
 		VALUES ('$eid', '$ename', '$estatus', '$egender', '$euser', '$epass')";
 		mysqli_query($DBConnect, $sql) or die(mysqli_error());
 		echo "Records have been saved";
-	}	else	{
+	}
+
+	else
+	{
 		echo "<center>Cannot Save</center>";
 	}
 
