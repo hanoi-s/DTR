@@ -48,34 +48,12 @@
     $gender=$cell["empgender"];
 	$user=$cell["empuser"];
     $pass=$cell["emppass"];
-       echo "<input type='hidden' name='id' value='". $id . "'size='30'>";
-       echo "<p style='color:white'> Name: <input type='text' name='name' value='" .$name."' size='30'><br/>";
-			 switch ($status) {
-			  case 'Regular':
-			 	 echo "
-			 		 Status: <input type='radio' name='status' value='Probation'>Probation
-					 <input type='radio' name='status' value='Regular' checked>Regular<br>";
-			 	 break;
-			  case 'Probation':
-			 	 echo "
-			 		 Status: <input type='radio' name='status' value='Probation' checked>Probation
-					 <input type='radio' name='status' value='Regular'>Regular<br>";
-			 	 break;
-			 }
-			 switch ($gender) {
-			 	case 'F':
-			 		echo "
-						<br>Gender: <input type='radio' name='gender' value='M'>Male
-						<input type='radio' name='gender' value='F' checked>Female<br>";
-					break;
-				case 'M':
-					echo "
-						<br>Gender: <input type='radio' name='gender' value='M' checked>Male
-						<input type='radio' name='gender' value='F'>Female<br>";
-					break;
-			}
-	   	 echo "<br>Username: <input type='text' name='user' value='".$user."' size='30'><br/>";
-       echo "Password: <input type='password' name='pass' value='".$pass."' size='30'><br/>";
+		echo "<input type='hidden' name='id' value='". $id . "'size='30'>";
+		echo "Employee Name : <input type='text' name='name' value='" .$name."' size='30'><br/>";
+		echo "Employee Status : <input type='text' name='status' value='".$status."' size='30'><br/>";
+		echo "Employee Gender : <input type='text' name='gender' value='".$gender."' size='30'><br/>";
+		echo "Employee Username : <input type='text' name='user' value='".$user."' size='30'><br/>";
+		echo "Employee Password : <input type='text' name='pass' value='".$pass."' size='30'><br/>";
 	   echo "<br /><center><input type='button' onclick='confirmDelete()' name='delete' value='Delete account' class='button'/>&nbsp&nbsp<input type='submit' onclick='confirmation()' name='edit' value='Save' class='button'/><center>";
    echo "</form></p>";
   }
