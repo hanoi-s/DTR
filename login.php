@@ -25,7 +25,7 @@
 <table opacity= 0%>
 <tr>
 <form name="frm" method="post" action="check.php">
-<td><h3 style="color:white">Username:</h3></td><td><input type="text" name="username"/></td>
+<td><h3 style="color:white">Username:</h3></td><td><input type="text" name="username" autofocus/></td>
 </tr>
 <tr>
 <td><h3 style="color:white">Password:</h3></td><td><input type="password" name="pass"/></td>
