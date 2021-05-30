@@ -32,8 +32,7 @@
 <body>
 <div class = "logincentered">
 <br><br><br><br><br><br>
-<h1>Edit Your Profile</h1>
-<br>
+<center><h1>Edit Your Profile</h1></center>
 <?php
 	require("connect.php");
 	echo "<form action='update.php' method='post'>";
@@ -66,17 +65,17 @@
 			 switch ($gender) {
 			 	case 'F':
 			 		echo "
-						Gender: <input type='radio' name='gender' value='M'>Male
+						<br>Gender: <input type='radio' name='gender' value='M'>Male
 						<input type='radio' name='gender' value='F' checked>Female<br>";
 					break;
 				case 'M':
 					echo "
-						Gender: <input type='radio' name='gender' value='M' checked>Male
+						<br>Gender: <input type='radio' name='gender' value='M' checked>Male
 						<input type='radio' name='gender' value='F'>Female<br>";
 					break;
 			}
-	   	 echo "Username: <input type='text' name='user' value='".$user."' size='30'><br/>";
-       echo "Password: <input type='text' name='pass' value='".$pass."' size='30'><br/>";
+	   	 echo "<br>Username: <input type='text' name='user' value='".$user."' size='30'><br/>";
+       echo "Password: <input type='password' name='pass' value='".$pass."' size='30'><br/>";
 	   echo "<br /><center><input type='button' onclick='confirmDelete()' name='delete' value='Delete account' class='button'/>&nbsp&nbsp<input type='submit' onclick='confirmation()' name='edit' value='Save' class='button'/><center>";
    echo "</form></p>";
   }
