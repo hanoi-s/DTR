@@ -31,6 +31,9 @@
 
 	mysqli_select_db($DBConnect, "dbemployee");
 
+	$query = mysqli_query($DBConnect, "SELECT empuser, emppass, empid FROM tblemployee WHERE empuser = '$user'");
+
+
 	if(isset($_POST["Save"]))
 	{
 		$eid=$_POST["eid"];
@@ -38,17 +41,14 @@
 		$estatus=$_POST["estatus"];
 		$egender=$_POST["egender"];
 		$euser=$_POST["euser"];
-		$epass=$_POST["epass"];
+    $epass=$_POST["epass"]; // (1) COMMENT THIS LINE TO ENABLE MD5 HASH
+
+		// $epass=md5($_POST["epass"]); // (2) UNCOMMENT THIS TO ENABLE MD5 HASH
 
 		$sql = "INSERT INTO tblemployee (empid, empname, empstatus, empgender, empuser, emppass)
 		VALUES ('$eid', '$ename', '$estatus', '$egender', '$euser', '$epass')";
 		mysqli_query($DBConnect, $sql) or die(mysqli_error());
 		echo "Records have been saved";
-	}
-
-	else
-	{
-		echo "<center>Cannot Save</center>";
 	}
 
 ?>

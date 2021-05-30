@@ -40,8 +40,12 @@ if(isset($_GET["error"])) {
   $error=$_GET["error"];
 
   //this line will be called by the check.php if the login credentials are incorrect
-  if ($error==1) {
-  echo "<p align='center'>Username and/or password invalid<br/></p>"; }
+	switch($error){
+    case 1: echo "<p align='center'>Username and/or password invalid<br/></p>"; break;
+    case 2: echo "<p align='center'>Field(s) should not be empty<br/></p>"; break;
+    case 3: echo "<p align='center'>Username does not exist<br/></p>"; break;
+  }
+
 }
 
 ?>
