@@ -12,9 +12,9 @@
 	<p style="color:white">
   Enter ID: <input type='text' name="eid" size='14' autofocus/> <br />
 	Enter Name: <input type="text" name= "ename" size="50" /> <br />
-	Enter Status: <input type="radio" name= "estatus" value="Probation" checked/>Probation
+	Enter Status: <input type="radio" name= "estatus" value="Probation" />Probation
                 <input type="radio" name= "estatus" value="Regular" />Regular<br />
-	Enter Gender: <input type="radio" name="egender" value="M" checked>Male
+	Enter Gender: <input type="radio" name="egender" value="M">Male
                 <input type="radio" name="egender" value="F">Female<br>
 	Enter Username: <input type="text" name= "euser" size="8" /> <br />
 	Enter Password: <input type="password" name= "epass" size="50" /> <br />
@@ -31,9 +31,6 @@
 
 	mysqli_select_db($DBConnect, "dbemployee");
 
-	// $query = mysqli_query($DBConnect, "SELECT empuser, emppass, empid FROM tblemployee WHERE empuser = '$user'");
-
-
 	if(isset($_POST["Save"]))
 	{
 		$eid=$_POST["eid"];
@@ -41,14 +38,17 @@
 		$estatus=$_POST["estatus"];
 		$egender=$_POST["egender"];
 		$euser=$_POST["euser"];
-    $epass=$_POST["epass"]; // (1) COMMENT THIS LINE TO ENABLE MD5 HASH
-
-		// $epass=md5($_POST["epass"]); // (2) UNCOMMENT THIS TO ENABLE MD5 HASH
+		$epass=$_POST["epass"];
 
 		$sql = "INSERT INTO tblemployee (empid, empname, empstatus, empgender, empuser, emppass)
 		VALUES ('$eid', '$ename', '$estatus', '$egender', '$euser', '$epass')";
 		mysqli_query($DBConnect, $sql) or die(mysqli_error());
 		echo "Records have been saved";
+	}
+
+	else
+	{
+		echo "<center>Cannot Save</center>";
 	}
 
 ?>
