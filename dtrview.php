@@ -1,5 +1,8 @@
 <?php
 	session_start();
+	error_reporting(E_ALL ^ E_NOTICE);
+	error_reporting(0);
+	ini_set('display_errors', 0);
 	if(!isset($_SESSION["getLogin"]))
 	{
 		header("location:login.php");
@@ -13,23 +16,22 @@
 <head>
 <meta charset = "UTF-8">
 <title> Date of Efficiency </title>
+<link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-<?php
-	error_reporting(E_ALL ^ E_NOTICE);
-	echo "Hi". ucwords($_SESSION["getLogin"]);
-?>
-
-&nbsp; &nbsp;<a href= "employeeChat.php">Chat </a>
-
-&nbsp; &nbsp;<a href= "modify.php">View Account </a>
-
-&nbsp; &nbsp;<a href= "logout.php">Logout </a>
-
-
+<ul>
+	<?php
+		error_reporting(E_ALL ^ E_NOTICE);
+		echo "<li style='padding: 14px 16px; float:left'>Hi ". ucwords($_SESSION["getLogin"])."</li>";
+	?>
+	<li><a href= "logout.php">Logout </a></li>
+	<li><a href= "employeeChat.php">Chat </a></li>
+	<li><a href= "edit.php">Edit Profile</a></li>
+</ul>
+<div><center>
 </b>
-<table border = "1" width="50%">
+<table border = "3" bordercolor="black" width="50%" frame=void rules=rows color=black>
 		
 <?php
 	$dayArray = array("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
@@ -146,9 +148,12 @@
 	}
 	
 	
-  echo "<a href='dtr.php'>Back to DTR page | |</a>"; 
 ?>
+</center>
 </table>
+<br>
+<a href='dtr.php' style='text-decoration:none' class="button">Back to DTR page</a>
+</div>
 </body>
 </html>
 
