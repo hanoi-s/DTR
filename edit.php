@@ -55,8 +55,7 @@
        echo "Gender: <input type='text' name='gender' value='".$gender."' size='1'><br/>";
 	   	 echo "Username: <input type='text' name='user' value='".$user."' size='30'><br/>";
        echo "Password: <input type='text' name='pass' value='".$pass."' size='30'><br/>";
-			 echo "<input type='button' onclick='confirmDelete()' name='delete' value='Delete account' class='button'/>";
-    echo "<br /><center><input type='submit' onclick='confirmation()' name='edit' value='Save' class='button'/><center>";
+	   echo "<br /><center><input type='button' onclick='confirmDelete()' name='delete' value='Delete account' class='button'/>&nbsp&nbsp<input type='submit' onclick='confirmation()' name='edit' value='Save' class='button'/><center>";
    echo "</form>";
   }
  ?>

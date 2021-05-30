@@ -17,7 +17,7 @@
 <ul>
 	<li style='float:left'><a href= "login.php">Back</a></li>
 	<li><a href= "logout.php">Logout </a></li>
-	<li><a href= "modify.php">View Account </a></li>
+	<li><a href= "edit.php">Edit Profile</a></li>
 </ul>
 
 <div class = "logincentered">
