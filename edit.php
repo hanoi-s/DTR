@@ -50,7 +50,7 @@
 	$user=$cell["empuser"];
     $pass=$cell["emppass"];
        echo "<input type='hidden' name='id' value='". $id . "'size='30'>";
-       echo "Name: <input type='text' name='name' value='" .$name."' size='30'><br/>";
+       echo "<p style='color:white'> Name: <input type='text' name='name' value='" .$name."' size='30'><br/>";
 			 switch ($status) {
 			  case 'Regular':
 			 	 echo "
@@ -78,7 +78,7 @@
 	   	 echo "Username: <input type='text' name='user' value='".$user."' size='30'><br/>";
        echo "Password: <input type='text' name='pass' value='".$pass."' size='30'><br/>";
 	   echo "<br /><center><input type='button' onclick='confirmDelete()' name='delete' value='Delete account' class='button'/>&nbsp&nbsp<input type='submit' onclick='confirmation()' name='edit' value='Save' class='button'/><center>";
-   echo "</form>";
+   echo "</form></p>";
   }
  ?>
 </div>
