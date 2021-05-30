@@ -1,5 +1,8 @@
 <?php
 	session_start();
+	error_reporting(E_ALL ^ E_NOTICE);
+	error_reporting(0);
+	ini_set('display_errors', 0);
 	if(!isset($_SESSION["getLogin"]))	{
 		header("location:login.php");
 	}	else {
@@ -7,20 +10,30 @@
 
 <!DOCTYPE html>
 <html>
-<head><meta charset = "UTF-8"><title> Date of Efficiency </title></head>
+<head><meta charset = "UTF-8"><title> Date of Efficiency </title>
+	<link rel="stylesheet" href="style.css">
+	<style>
+		body{
+			background: #554ca8;
+		}
+	</style>
+</head>
 
 <body>
-<?php
-	error_reporting(E_ALL ^ E_NOTICE);
-	echo "Hi ". ucwords($_SESSION["getLogin"]);
-?>
-
-&nbsp; &nbsp;<a href= "employeeChat.php">Chat </a>
-&nbsp; &nbsp;<a href= "modify.php">View Account </a>
-&nbsp; &nbsp;<a href= "logout.php">Logout </a>
-
+<ul>
+	<?php
+		error_reporting(E_ALL ^ E_NOTICE);
+		echo "<li style='padding: 14px 16px; float:left'>Hi ". ucwords($_SESSION["getLogin"])."</li>";
+	?>
+	<li><a href= "logout.php">Logout </a></li>
+	<li><a href= "employeeChat.php">Chat </a></li>
+	<li><a href= "edit.php">Edit Profile</a></li>
+</ul>
+<br><br>
+<center>
+<div style='border: 2px solid white; padding: 30px;border-radius: 15px; width:50%'>
 </b>
-<table border = "1" width="50%">
+<table border = "3" bordercolor="white" width="90%" frame=void rules=rows color=black >
 
 <?php
 	$dayArray = array("Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday");
@@ -30,7 +43,7 @@
 	$SelectedSched=array();
 	$Rest=array();
 
-	echo "<p><b>Date of Effectivity: </b>";
+	echo "<div style='color:white'><p><b>Date of Effectivity: </b>";
 	echo $startDate;
 	echo " | ";
 
@@ -55,14 +68,14 @@
 	}
 
 	if($Days<=5 && $endDate>=$startDate) {
-		echo "<td> Day Present </td>";
-		echo "<td> Time in </td>";
-		echo "<td> Time out </td>";
-		echo "<td> Hours per day </td>";
+		echo "<td style='color:white; text-align: center''> Day Present </td>";
+		echo "<td style='color:white; text-align: center''> Time in </td>";
+		echo "<td style='color:white; text-align: center''> Time out </td>";
+		echo "<td style='color:white; text-align: center''> Hours per day </td>";
 
 
 		for($rows=1; $rows<=$Days; $rows++)	{
-			echo"<tr>";
+			echo"<tr style='color:white; text-align: center'>";
 
 			$isOvertime="No";
 			$isUndertime="No";
@@ -98,20 +111,20 @@
 			include 'dtrdata.php';
 		}
 
-			echo "<tr>";
+			echo "<tr style='color:white; background:rgba(255, 255, 255, 0.15)'>";
 			echo "<td colspan=3> Total Rendered Hours:   </td>";
-			echo "<td> $Total </td>";
+			echo "<td style='text-align: center'> $Total </td>";
 			echo "</tr>";
 
-			echo "<tr>";
+			echo "<tr style='color:white; background:rgba(255, 255, 255, 0.15)'>";
 			echo "<td colspan=3> Overtime:   </td>";
-			echo "<td> $Overtime </td>";
+			echo "<td style='text-align: center'> $Overtime </td>";
 			echo "</tr>";
 
-			echo "<tr>";
+			echo "<tr style='color:white; background:rgba(255, 255, 255, 0.15)'>";
 			echo "<td colspan=3> Rest Day:   </td>";
 
-			echo "<td> $restday </td>";
+			echo "<td style='text-align: center'> $restday </td>";
 			echo "</tr>";
 
 	}
@@ -121,11 +134,14 @@
 	}
 
 	$url = htmlspecialchars($_SERVER['HTTP_REFERER']);
-  echo "<a href='$url'>back</a>";
-
+	echo"</div>";
 ?>
 
 </table>
+<br><br>
+<a href='$url' style='text-decoration:none' class="button">back</a>
+
+</div></center>
 </body>
 </html>
 
