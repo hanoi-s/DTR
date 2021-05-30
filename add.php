@@ -31,8 +31,7 @@
 
 	mysqli_select_db($DBConnect, "dbemployee");
 
-	if(isset($_POST["Save"]))
-	{
+	if(isset($_POST["Save"]))	{
 		$eid=$_POST["eid"];
 		$ename=$_POST["ename"];
 		$estatus=$_POST["estatus"];
@@ -44,10 +43,7 @@
 		VALUES ('$eid', '$ename', '$estatus', '$egender', '$euser', '$epass')";
 		mysqli_query($DBConnect, $sql) or die(mysqli_error());
 		echo "Records have been saved";
-	}
-
-	else
-	{
+	}	else	{
 		echo "<center>Cannot Save</center>";
 	}
 
