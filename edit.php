@@ -51,8 +51,30 @@
     $pass=$cell["emppass"];
        echo "<input type='hidden' name='id' value='". $id . "'size='30'>";
        echo "Name: <input type='text' name='name' value='" .$name."' size='30'><br/>";
-       echo "Status: <input type='text' name='status' value='".$status."' size='30'><br/>";
-       echo "Gender: <input type='text' name='gender' value='".$gender."' size='1'><br/>";
+			 switch ($status) {
+			  case 'Regular':
+			 	 echo "
+			 		 Status: <input type='radio' name='status' value='Probation'>Probation
+					 <input type='radio' name='status' value='Regular' checked>Regular<br>";
+			 	 break;
+			  case 'Probation':
+			 	 echo "
+			 		 Status: <input type='radio' name='status' value='Probation' checked>Probation
+					 <input type='radio' name='status' value='Regular'>Regular<br>";
+			 	 break;
+			 }
+			 switch ($gender) {
+			 	case 'F':
+			 		echo "
+						Gender: <input type='radio' name='gender' value='M'>Male
+						<input type='radio' name='gender' value='F' checked>Female<br>";
+					break;
+				case 'M':
+					echo "
+						Gender: <input type='radio' name='gender' value='M' checked>Male
+						<input type='radio' name='gender' value='F'>Female<br>";
+					break;
+			}
 	   	 echo "Username: <input type='text' name='user' value='".$user."' size='30'><br/>";
        echo "Password: <input type='text' name='pass' value='".$pass."' size='30'><br/>";
 	   echo "<br /><center><input type='button' onclick='confirmDelete()' name='delete' value='Delete account' class='button'/>&nbsp&nbsp<input type='submit' onclick='confirmation()' name='edit' value='Save' class='button'/><center>";
