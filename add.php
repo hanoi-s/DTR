@@ -12,9 +12,9 @@
 	<p style="color:white">
   Enter ID: <input type='text' name="eid" size='14' autofocus/> <br />
 	Enter Name: <input type="text" name= "ename" size="50" /> <br />
-	Enter Status: <input type="radio" name= "estatus" value="Probation" />Probation
+	Enter Status: <input type="radio" name= "estatus" value="Probation" checked/>Probation
                 <input type="radio" name= "estatus" value="Regular" />Regular<br />
-	Enter Gender: <input type="radio" name="egender" value="M">Male
+	Enter Gender: <input type="radio" name="egender" value="M" checked>Male
                 <input type="radio" name="egender" value="F">Female<br>
 	Enter Username: <input type="text" name= "euser" size="8" /> <br />
 	Enter Password: <input type="password" name= "epass" size="50" /> <br />
