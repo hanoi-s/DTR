@@ -32,11 +32,11 @@
 <form action="dtrprocess.php" method="post">
 Date of Effectivity: &nbsp;
 
-<input type="date" id="StartDate" name="StartDate">
+<input type="date" id="StartDate" name="StartDate" onchange='Validation()'>
 
 &nbsp; Cut Off Date: &nbsp;
 
-<input type="date" id="EndDate" name="EndDate">
+<input type="date" id="EndDate" name="EndDate" onchange='Validation()'>
 
 
 
@@ -64,6 +64,7 @@ Date of Effectivity: &nbsp;
 	<input type="submit" name="enter" id="enter" value="Save" class="button" style="opacity: 0.3" disabled>
 	<input formaction = 'dtrview.php' type="submit" name="click" value = "View" class="button">
 	<input type="reset" class="button">
+	<p id="error0"></p>
 	<p id="error"></p>
 	<p id="error2"></p>
 	<p id="error3"></p>
@@ -105,11 +106,24 @@ Date of Effectivity: &nbsp;
 		var out3 = document.getElementById("out3").value;
 		var out4 = document.getElementById("out4").value;
 		var out5 = document.getElementById("out5").value;
-		//if((out0-in0)-1 >=6)
+
 		var i;
 		var count = 0;
 		var count2 =0;
-//(out0-in0)-1 >=6
+		var count3 =0;
+		
+		var startDt = document.getElementById("StartDate").value;
+		var endDt = document.getElementById("EndDate").value;
+
+		if( (new Date(startDt).getTime() > new Date(endDt).getTime()||(new Date(startDt).getTime() == new Date(endDt).getTime())))
+		{
+			document.getElementById("error0").innerHTML = "Start date should not be greater than the last date.";
+		}
+		if( (new Date(startDt).getTime() < new Date(endDt).getTime())){
+			document.getElementById("error0").innerHTML = ""
+			count3++;
+		}
+
 		if(checkBox0.checked == true){
 			count++;
 			if ((out0-in0)-1 >=6){
@@ -172,7 +186,7 @@ Date of Effectivity: &nbsp;
 			document.getElementById("error").innerHTML = "";
 		}
 
-		if (count > 4 && count <6 && count2 > 4 && count2 <6){
+		if (count > 4 && count <6 && count2 > 4 && count2 <6 && count3 == 1){
 			document.getElementById("enter").disabled = false;
 			document.getElementById("enter").style.opacity = 1;
 		}

@@ -139,7 +139,7 @@
 
 </table>
 <br><br>
-<a href='$url' style='text-decoration:none' class="button">back</a>
+<a href='dtr.php' style='text-decoration:none' class="button">back</a>
 
 </div></center>
 </body>
